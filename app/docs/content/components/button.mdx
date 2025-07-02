@@ -1,0 +1,69 @@
+# Button Component
+
+The Button component is a fundamental UI element used for user interactions.
+
+## Usage
+
+```tsx
+import { Button } from '@/components/Button';
+
+function MyComponent() {
+  return (
+    <Button variant="primary" size="medium">
+      Click me
+    </Button>
+  );
+}
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `'primary' \| 'secondary' \| 'outline'` | `'primary'` | The visual style of the button |
+| `size` | `'small' \| 'medium' \| 'large'` | `'medium'` | The size of the button |
+| `disabled` | `boolean` | `false` | Whether the button is disabled |
+| `onClick` | `() => void` | - | Click handler function |
+
+## Examples
+
+### Primary Button
+
+```tsx
+<Button variant="primary">Primary Button</Button>
+```
+
+### Secondary Button
+
+```tsx
+<Button variant="secondary">Secondary Button</Button>
+```
+
+### Outline Button
+
+```tsx
+<Button variant="outline">Outline Button</Button>
+```
+
+### Different Sizes
+
+```tsx
+<Button size="small">Small</Button>
+<Button size="medium">Medium</Button>
+<Button size="large">Large</Button>
+```
+
+### Disabled State
+
+```tsx
+<Button disabled>Disabled Button</Button>
+```
+
+## Accessibility
+
+The Button component includes proper ARIA attributes and keyboard navigation support:
+
+- Supports `Enter` and `Space` key activation
+- Includes `role="button"` when not a native button element
+- Proper focus management
+- Screen reader friendly

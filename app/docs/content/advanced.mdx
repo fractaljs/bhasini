@@ -1,0 +1,80 @@
+# Advanced Features
+
+This page demonstrates advanced features of our MDX system.
+
+## Custom Components
+
+You can use custom components like the Callout component:
+
+## Code Examples
+
+Here are some more complex code examples:
+
+```typescript
+interface User {
+  id: string;
+  name: string;
+  email: string;
+  preferences: {
+    theme: 'light' | 'dark';
+    notifications: boolean;
+  };
+}
+
+class UserService {
+  private users: Map<string, User> = new Map();
+
+  async createUser(userData: Omit<User, 'id'>): Promise<User> {
+    const id = crypto.randomUUID();
+    const user: User = {
+      id,
+      ...userData,
+    };
+    
+    this.users.set(id, user);
+    return user;
+  }
+
+  async getUser(id: string): Promise<User | null> {
+    return this.users.get(id) || null;
+  }
+}
+```
+
+## Nested Lists
+
+You can create complex nested structures:
+
+1. First level item
+   - Second level item
+     - Third level item
+     - Another third level item
+   - Another second level item
+2. Another first level item
+   - With nested content
+
+## Links and References
+
+You can link to other documentation pages:
+- [Getting Started](/docs/getting-started)
+- [Components](/docs/components)
+- [Documentation Index](/docs)
+
+## Blockquotes
+
+> This is a blockquote that can contain important information or citations.
+> 
+> You can have multiple paragraphs within a blockquote.
+
+## Emphasis and Styling
+
+You can use **bold text** and *italic text* to emphasize important points. You can also combine them for ***bold italic text***.
+
+## Tables
+
+| Feature | Status | Description |
+|---------|--------|-------------|
+| MDX Support | ✅ | Full MDX rendering |
+| Syntax Highlighting | ✅ | Code block highlighting |
+| Custom Components | ✅ | Extensible component system |
+| Routing | ✅ | Automatic file-based routing | 
