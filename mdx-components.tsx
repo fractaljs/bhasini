@@ -22,7 +22,7 @@ const components = {
     const text = typeof children === "string" ? children : "";
     const id = generateSlug(text);
     return (
-      <h1 id={id} className="text-2xl pt-12 mb-0 font-bold" {...props}>
+      <h1 id={id} className="text-2xl pt-12 font-bold" {...props}>
         {children}
       </h1>
     );
@@ -33,7 +33,7 @@ const components = {
     return (
       <h2
         id={id}
-        className="text-gray-800 dark:text-zinc-200 font-medium mt-8 mb-3"
+        className="text-2xl font-medium mt-16 mb-3"
         {...props}
       >
         {children}
@@ -46,7 +46,7 @@ const components = {
     return (
       <h3
         id={id}
-        className="text-gray-800 dark:text-zinc-200 font-medium mt-8 mb-3"
+        className="text-xl font-medium mt-8 mb-3"
         {...props}
       >
         {children}

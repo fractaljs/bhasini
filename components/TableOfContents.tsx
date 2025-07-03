@@ -60,12 +60,12 @@ export default function TableOfContents({
   }
 
   return (
-    <nav className={isMobile ? "toc-mobile" : "toc"}>
+    <nav className="w-64">
       {!isMobile && (
         <div className="toc-header">
-          <h4 className="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-4">
-            Table of Contents
-          </h4>
+          <p className="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-4">
+            On this page
+          </p>
         </div>
       )}
       <ul className="space-y-2">

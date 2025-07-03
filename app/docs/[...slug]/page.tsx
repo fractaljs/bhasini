@@ -165,59 +165,19 @@ export default async function Page({
   };
 
   return (
-    <div className="flex gap-8">
-      {/* Main content */}
-      <div className="flex-1">
-        {/* Display metadata */}
-        <header className="mb-8">
-          <h1 className="text-3xl font-bold mb-2">{metadata.title}</h1>
-          {metadata.description && (
-            <p className="text-gray-600 mb-4">{metadata.description}</p>
-          )}
-          {metadata.category && (
-            <span className="inline-block bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm mr-2">
-              {metadata.category}
-            </span>
-          )}
-          {metadata.tags && metadata.tags.length > 0 && (
-            <div className="mt-2">
-              {metadata.tags.map((tag: string, index: number) => (
-                <span
-                  key={index}
-                  className="inline-block bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm mr-1"
-                >
-                  #{tag}
-                </span>
-              ))}
-            </div>
-          )}
-        </header>
-
-        {/* Render MDX content */}
-        <article className="prose prose-lg max-w-none">{content}</article>
+    <div className="flex items-start justify-between gap-10 w-full">
+      <div className="grow mx-auto flex flex-col items-center">
+        <article className="px-5 max-w-[80ch]">
+          <div className="flex flex-col gap-2 w-full">
+            <h1 className="text-4xl font-bold">{metadata.title}</h1>
+            <p className="text-lg">{metadata.description}</p>
+          </div>
+          {content}
+        </article>
       </div>
-
-      {/* Table of Contents */}
-      {headings.length > 0 && (
-        <>
-          {/* Desktop TOC */}
-          <aside className="hidden lg:block w-64 flex-shrink-0">
-            <div className="sticky top-24">
-              <TableOfContents items={headings} />
-            </div>
-          </aside>
-
-          {/* Mobile TOC */}
-          <aside className="lg:hidden w-full mb-6">
-            <details className="bg-gray-50 dark:bg-gray-800 rounded-lg p-4">
-              <summary className="cursor-pointer font-medium text-gray-900 dark:text-gray-100 mb-2">
-                Table of Contents
-              </summary>
-              <TableOfContents items={headings} isMobile={true} />
-            </details>
-          </aside>
-        </>
-      )}
+      <aside className="sticky top-6">
+        <TableOfContents items={headings} />
+      </aside>
     </div>
   );
 }
