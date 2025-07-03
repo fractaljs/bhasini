@@ -71,10 +71,14 @@ const layout = ({ children }: { children: React.ReactNode }) => {
           className="min-w-[270px] h-screen  px-4 border-r border-gray-700/40 debug"
           style={{ paddingTop: "calc(var(--default-navbar-height) + 1rem)" }}
         >
-          <Sidebar items={scanDirectory(path.join(process.cwd(), "app", "docs", "content"))} />
+          <Sidebar
+            items={scanDirectory(
+              path.join(process.cwd(), "app", "docs", "content")
+            )}
+          />
         </aside>
         <div className="grow p-4 h-screen overflow-y-auto pt-[var(--default-navbar-height)]">
-          <article className="max-w-3xl mx-auto pt-6">{children}</article>
+          <div className="max-w-6xl mx-auto pt-6">{children}</div>
         </div>
       </div>
     </main>

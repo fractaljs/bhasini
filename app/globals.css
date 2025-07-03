@@ -136,3 +136,25 @@ table {
 .debug {
   outline: 1px solid red;
 }
+
+/* Table of Contents Styles */
+.toc {
+  @apply border-l border-gray-200 dark:border-gray-700 pl-4;
+}
+
+.toc-mobile {
+  @apply border-t border-gray-200 dark:border-gray-700 pt-4;
+}
+
+.toc-link {
+  @apply font-medium;
+}
+
+.toc-link:hover {
+  @apply bg-gray-50 dark:bg-gray-800/50;
+}
+
+/* Ensure headings have proper spacing for scroll targets */
+h1[id], h2[id], h3[id] {
+  scroll-margin-top: 2rem;
+}
